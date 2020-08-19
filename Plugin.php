@@ -1,12 +1,11 @@
 <?php namespace Codecycler\ThemeUpdates;
 
 use Event;
-use Backend;
 use Codecycler\ThemeUpdates\Classes\Event\Content\ExtendContent;
 use Codecycler\ThemeUpdates\Classes\Event\Partial\ExtendPartial;
-use Codecycler\ThemeUpdates\Classes\Event\Theme\ExtendTheme;
 use Codecycler\ThemeUpdates\Classes\Event\Themes\ExtendThemesController;
 use Codecycler\ThemeUpdates\Classes\Helper\ThemeHelper;
+use Illuminate\Foundation\AliasLoader;
 use System\Classes\PluginBase;
 
 /**
@@ -34,9 +33,10 @@ class Plugin extends PluginBase
     public function boot()
     {
         $themeHelper = ThemeHelper::instance();
-        Event::subscribe(ExtendTheme::class);
         Event::subscribe(ExtendContent::class);
         Event::subscribe(ExtendPartial::class);
         Event::subscribe(ExtendThemesController::class);
+
+        AliasLoader::getInstance()->alias('ThemeHelper', ThemeHelper::class);
     }
 }

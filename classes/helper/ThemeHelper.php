@@ -41,4 +41,17 @@ class ThemeHelper
             $this->childTheme = null;
         }
     }
+
+    public function isThemeExtended($checkTheme)
+    {
+        foreach (Theme::all() as $theme) {
+            if ($theme->getDirName() == $checkTheme->getDirname() . '-child') {
+                $data = $theme->getConfig();
+
+                if ($data['extends'] == $checkTheme->getConfig()['code']) {
+                    return true;
+                }
+            }
+        }
+    }
 }
