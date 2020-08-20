@@ -14,7 +14,7 @@ class ExtendTheme
         $backendUri = str_replace('/', '', $backendUri);
 
         Event::listen('cms.theme.getActiveTheme', function () use ($backendUri, $requestUrl) {
-                if (preg_match('/'.$backendUri.'/i', $requestUrl)) {
+                if (preg_match('/'.$backendUri.'/i', $requestUrl) && ThemeHelper::instance()->backendUseTheme == 'child') {
                     return ThemeHelper::instance()->childTheme->getDirName();
                 }
             }

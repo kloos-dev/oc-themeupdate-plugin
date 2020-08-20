@@ -2,6 +2,7 @@
 
 use Event;
 use Codecycler\ThemeUpdates\Classes\Event\Content\ExtendContent;
+use Codecycler\ThemeUpdates\Classes\Event\Cms\ExtendCmsObject;
 use Codecycler\ThemeUpdates\Classes\Event\Partial\ExtendPartial;
 use Codecycler\ThemeUpdates\Classes\Event\Theme\ExtendTheme;
 use Codecycler\ThemeUpdates\Classes\Event\Themes\ExtendThemesController;
@@ -31,14 +32,18 @@ class Plugin extends PluginBase
         ];
     }
 
+    public function register()
+    {
+        AliasLoader::getInstance()->alias('ThemeHelper', ThemeHelper::class);
+    }
+
     public function boot()
     {
         $themeHelper = ThemeHelper::instance();
         Event::subscribe(ExtendTheme::class);
         Event::subscribe(ExtendContent::class);
         Event::subscribe(ExtendPartial::class);
+        Event::subscribe(ExtendCmsObject::class);
         Event::subscribe(ExtendThemesController::class);
-
-        AliasLoader::getInstance()->alias('ThemeHelper', ThemeHelper::class);
     }
 }

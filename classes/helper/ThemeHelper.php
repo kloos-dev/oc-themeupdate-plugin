@@ -1,6 +1,6 @@
 <?php namespace Codecycler\ThemeUpdates\Classes\Helper;
 
-use Yaml;
+use Session;
 use Cms\Classes\Theme;
 use October\Rain\Support\Traits\Singleton;
 
@@ -11,6 +11,8 @@ class ThemeHelper
     public $activeTheme;
 
     public $childTheme;
+
+    public $backendUseTheme;
 
     public function init()
     {
@@ -53,5 +55,25 @@ class ThemeHelper
                 }
             }
         }
+    }
+
+    public function isEditingActiveTheme()
+    {
+        if (Theme::getActiveTheme() != $this->activeTheme) {
+            return false;
+        }
+    }
+
+    public function backendUseTheme($theme)
+    {
+        Session::put('codecycler.theme_updates::backend_use_theme', $theme);
+        $this->backendUseTheme = $theme;
+    }
+
+    public function backendGetUseTheme()
+    {
+        $this->backendUseTheme = Session::get('codecycler.theme_updates::backend_use_theme', 'child');
+
+        return $this->backendUseTheme;
     }
 }
