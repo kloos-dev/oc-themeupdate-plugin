@@ -1,6 +1,12 @@
 # oc-themeupdate-plugin
 Theme updates for OctoberCMS
 
+## Roadmap
+Check the projects page for the roadmap.
+
+## Contribution
+If you would like to help, you can create a pr based on the develop branch. Please feel free to contact us if you have any questions.
+
 ## Extend theme with child theme
 You can extend a theme with partials and content files.
 
