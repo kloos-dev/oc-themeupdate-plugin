@@ -40,7 +40,7 @@ class ThemeHelper
         if (!$this->childTheme) {
             return;
         }
-
+        
         $config = $this->childTheme->getConfig();
 
         if ($config['extends'] != $this->activeTheme->getConfig()['code']) {
