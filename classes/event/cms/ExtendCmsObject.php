@@ -1,8 +1,8 @@
-<?php namespace Codecycler\ThemeUpdates\Classes\Event\Cms;
+<?php namespace Kloos\ThemeUpdates\Classes\Event\Cms;
 
 use Event;
 use Cms\Widgets\TemplateList;
-use Codecycler\ThemeUpdates\Classes\Helper\ThemeHelper;
+use Kloos\ThemeUpdates\Classes\Helper\ThemeHelper;
 
 class ExtendCmsObject
 {
@@ -10,8 +10,9 @@ class ExtendCmsObject
     {
         TemplateList::extend(function ($controller) {
             $controller->addDynamicProperty('backendUseTheme', ThemeHelper::instance()->backendGetUseTheme());
+            $controller->addDynamicProperty('childTheme', ThemeHelper::instance()->childTheme);
 
-            $controller->addViewPath(plugins_path('codecycler/themeupdates/classes/event/cms/partials'));
+            $controller->addViewPath(plugins_path('kloos/themeupdates/classes/event/cms/partials'));
         });
 
         Event::listen('backend.ajax.beforeRunHandler', function ($controller, $handler) {

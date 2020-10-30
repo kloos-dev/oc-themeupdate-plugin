@@ -1,12 +1,12 @@
-<?php namespace Codecycler\ThemeUpdates;
+<?php namespace Kloos\ThemeUpdates;
 
 use Event;
-use Codecycler\ThemeUpdates\Classes\Event\Content\ExtendContent;
-use Codecycler\ThemeUpdates\Classes\Event\Cms\ExtendCmsObject;
-use Codecycler\ThemeUpdates\Classes\Event\Partial\ExtendPartial;
-use Codecycler\ThemeUpdates\Classes\Event\Theme\ExtendTheme;
-use Codecycler\ThemeUpdates\Classes\Event\Themes\ExtendThemesController;
-use Codecycler\ThemeUpdates\Classes\Helper\ThemeHelper;
+use Kloos\ThemeUpdates\Classes\Event\Content\ExtendContent;
+use Kloos\ThemeUpdates\Classes\Event\Cms\ExtendCmsObject;
+use Kloos\ThemeUpdates\Classes\Event\Partial\ExtendPartial;
+use Kloos\ThemeUpdates\Classes\Event\Theme\ExtendTheme;
+use Kloos\ThemeUpdates\Classes\Event\Themes\ExtendThemesController;
+use Kloos\ThemeUpdates\Classes\Helper\ThemeHelper;
 use Illuminate\Foundation\AliasLoader;
 use System\Classes\PluginBase;
 
@@ -27,7 +27,7 @@ class Plugin extends PluginBase
         return [
             'name'        => 'Theme updates',
             'description' => 'Theme updates for OctoberCMS',
-            'author'      => 'Codecycler',
+            'author'      => 'Kloos',
             'icon'        => 'icon-leaf'
         ];
     }

@@ -1,4 +1,4 @@
-<?php namespace Codecycler\ThemeUpdates\Classes\Helper;
+<?php namespace Kloos\ThemeUpdates\Classes\Helper;
 
 use Session;
 use Cms\Classes\Theme;
@@ -37,6 +37,10 @@ class ThemeHelper
 
     protected function validateChildTheme()
     {
+        if (!$this->childTheme) {
+            return;
+        }
+
         $config = $this->childTheme->getConfig();
 
         if ($config['extends'] != $this->activeTheme->getConfig()['code']) {
@@ -66,13 +70,13 @@ class ThemeHelper
 
     public function backendUseTheme($theme)
     {
-        Session::put('codecycler.theme_updates::backend_use_theme', $theme);
+        Session::put('kloos.theme_updates::backend_use_theme', $theme);
         $this->backendUseTheme = $theme;
     }
 
     public function backendGetUseTheme()
     {
-        $this->backendUseTheme = Session::get('codecycler.theme_updates::backend_use_theme', 'child');
+        $this->backendUseTheme = Session::get('kloos.theme_updates::backend_use_theme', 'child');
 
         return $this->backendUseTheme;
     }

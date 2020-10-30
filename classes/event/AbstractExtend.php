@@ -1,8 +1,8 @@
-<?php namespace Codecycler\ThemeUpdates\Classes\Event;
+<?php namespace Kloos\ThemeUpdates\Classes\Event;
 
 use Event;
-use Codecycler\ThemeUpdates\Classes\ContentTypeEvents;
-use Codecycler\ThemeUpdates\Classes\Helper\ThemeHelper;
+use Kloos\ThemeUpdates\Classes\ContentTypeEvents;
+use Kloos\ThemeUpdates\Classes\Helper\ThemeHelper;
 
 abstract class AbstractExtend
 {

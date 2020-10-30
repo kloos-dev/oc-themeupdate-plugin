@@ -1,9 +1,9 @@
-<?php namespace Codecycler\ThemeUpdates\Classes\Event\Theme;
+<?php namespace Kloos\ThemeUpdates\Classes\Event\Theme;
 
 use Event;
 use Config;
 use Request;
-use Codecycler\ThemeUpdates\Classes\Helper\ThemeHelper;
+use Kloos\ThemeUpdates\Classes\Helper\ThemeHelper;
 
 class ExtendTheme
 {
@@ -15,6 +15,10 @@ class ExtendTheme
 
         Event::listen('cms.theme.getActiveTheme', function () use ($backendUri, $requestUrl) {
                 if (preg_match('/'.$backendUri.'/i', $requestUrl) && ThemeHelper::instance()->backendUseTheme == 'child') {
+                    if (!ThemeHelper::instance()->childTheme) {
+                        return;
+                    }
+
                     return ThemeHelper::instance()->childTheme->getDirName();
                 }
             }

@@ -49,23 +49,25 @@
 
     </div>
 </div>
-<?php if ($this->backendUseTheme == 'parent') : ?>
-    <div class="callout fade in callout-warning" style="margin-bottom: 0px;">
-        <div class="header">
-            <i class="icon-warning"></i>
-            <h3>Editing parent theme</h3>
-            <p>Use this theme for reference only</p>
+<?php if ($this->childTheme) : ?>
+    <?php if ($this->backendUseTheme == 'parent') : ?>
+        <div class="callout fade in callout-warning" style="margin-bottom: 0px;">
+            <div class="header">
+                <i class="icon-warning"></i>
+                <h3>Editing parent theme</h3>
+                <p>Use this theme for reference only</p>
+            </div>
+            <div class="content">
+                <p>You are editing the parent theme. Please go to the <a href="javascript:;" data-request="onSwitchTheme" data-request-data="theme: 'child'">child theme</a> to customize.</p>
+            </div>
         </div>
-        <div class="content">
-            <p>You are editing the parent theme. Please go to the <a href="javascript:;" data-request="onSwitchTheme" data-request-data="theme: 'child'">child theme</a> to customize.</p>
+    <?php else: ?>
+        <div class="callout fade in callout-info no-subheader" style="margin-bottom: 0px;">
+            <div class="header">
+                <i class="icon-info"></i>
+                <h3>Using child theme</h3>
+                <p>Switch to <a href="javascript:;" data-request="onSwitchTheme" data-request-data="theme: 'parent'">parent theme</a></p>
+            </div>
         </div>
-    </div>
-<?php else: ?>
-    <div class="callout fade in callout-info no-subheader" style="margin-bottom: 0px;">
-        <div class="header">
-            <i class="icon-info"></i>
-            <h3>Using child theme</h3>
-            <p>Switch to <a href="javascript:;" data-request="onSwitchTheme" data-request-data="theme: 'parent'">parent theme</a></p>
-        </div>
-    </div>
+    <?php endif; ?>
 <?php endif; ?>
