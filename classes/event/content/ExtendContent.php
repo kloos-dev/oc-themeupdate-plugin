@@ -1,8 +1,8 @@
-<?php namespace Codecycler\ThemeUpdates\Classes\Event\Content;
+<?php namespace Kloos\ThemeUpdates\Classes\Event\Content;
 
 use Cms\Classes\Content;
-use Codecycler\ThemeUpdates\Classes\ContentTypeEvents;
-use Codecycler\ThemeUpdates\Classes\Event\AbstractExtend;
+use Kloos\ThemeUpdates\Classes\ContentTypeEvents;
+use Kloos\ThemeUpdates\Classes\Event\AbstractExtend;
 
 class ExtendContent extends AbstractExtend
 {

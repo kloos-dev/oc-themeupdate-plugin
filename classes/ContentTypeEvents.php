@@ -1,4 +1,4 @@
-<?php namespace Codecycler\ThemeUpdates\Classes;
+<?php namespace Kloos\ThemeUpdates\Classes;
 
 class ContentTypeEvents
 {

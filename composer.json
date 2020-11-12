@@ -1,0 +1,23 @@
+{
+  "name": "kloos-dev/oc-themeupdate-plugin",
+  "description": "Theme updates for OctoberCMS",
+  "type": "october-plugin",
+  "license": "MIT",
+  "keywords": ["october", "theme", "update"],
+  "authors": [
+    {
+      "name": "Sebastiaan Kloos",
+      "email": "sebastiaan@kloos.dev",
+      "role": "creator"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Kloos\\ThemeUpdates\\": ""
+    }
+  },
+  "require": {
+    "php": ">=7.2",
+    "ext-json":"*"
+  }
+}

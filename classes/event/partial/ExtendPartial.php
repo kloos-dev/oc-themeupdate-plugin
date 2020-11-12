@@ -1,8 +1,8 @@
-<?php namespace Codecycler\ThemeUpdates\Classes\Event\Partial;
+<?php namespace Kloos\ThemeUpdates\Classes\Event\Partial;
 
 use Cms\Classes\Partial;
-use Codecycler\ThemeUpdates\Classes\ContentTypeEvents;
-use Codecycler\ThemeUpdates\Classes\Event\AbstractExtend;
+use Kloos\ThemeUpdates\Classes\ContentTypeEvents;
+use Kloos\ThemeUpdates\Classes\Event\AbstractExtend;
 
 class ExtendPartial extends AbstractExtend
 {
